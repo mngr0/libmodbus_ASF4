@@ -600,10 +600,10 @@ void modbus_routine(void *p){
 	
 	sys_sem_t sem;
 	err_t     err_sem;
-	err_sem = sys_sem_new(&sem, 0); /* Create a new semaphore. */
+	err_sem = sys_sem_new(&sem, 0); 
 	tcpip_init(tcpip_init_done, &sem);
-	sys_sem_wait(&sem); /* Block until the lwIP stack is initialized. */
-	sys_sem_free(&sem); /* Free the semaphore. */
+	sys_sem_wait(&sem); 
+	sys_sem_free(&sem); 
 	print_ipaddress();
 	
 
